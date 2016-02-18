@@ -1,0 +1,41 @@
+.header, .footer, .wrap-page{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.header, .footer {
+    height: 50px;
+    background-color: #fff;
+    text-align: center;
+    z-index: 900;
+    line-height: 50px;
+}
+
+.header {
+    top: 0;
+}
+
+.footer {
+    bottom: 0;
+    overflow: hidden;
+}
+
+.hdHistoryBL{
+    position: absolute;
+    top: 50px;
+}
+.wrap-page {
+    top: 0;
+    bottom:0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.header ~ .wrap-page {
+    top: 50px;
+}
+
+.footer ~ .wrap-page {
+    bottom: 50px;
+}

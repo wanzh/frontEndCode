@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>选择时间</title>
+    <link href="css/reset.css?v=2.0.0" rel="stylesheet">
+    <link href="css/layout.css?v=2.0.0" rel="stylesheet">
+    <link href="css/style.css?v=2.0.0" rel="stylesheet">
+</head>
+<body>
+<header class="header clearfix">
+    <h1 class="title"><a class="back" href="index.html"></a><span>选择时间</span><a href="index.html?date=14"
+                                                                                class="btnToday">今天</a></h1>
+</header>
+<div class="wrap-page" id="selectTimePage">
+    <div class="page">
+        <div id="calendarBox">
+            <div class="calendarDate">
+                <p class="calendarDate-year" id="calendarDate-year">2015</p>
+
+                <p class="calendarDate-month" id="calendarDate-month">8月</p>
+                <a href="javascript:;" class="calendarDate-prevMonth" id="prevMonth"></a>
+                <a href="javascript:;" class="calendarDate-nextMonth" id="nextMonth"></a>
+            </div>
+            <table class="calendar" id="calendar">
+                <thead>
+                <tr>
+                    <th><span title="Sunday">日</span></th>
+                    <th><span title="Monday">一</span></th>
+                    <th><span title="Tuesday">二</span></th>
+                    <th><span title="Wednesday">三</span></th>
+                    <th><span title="Thursday">四</span></th>
+                    <th><span title="Friday">五</span></th>
+                    <th><span title="Saturday">六</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><span></span></td>
+                    <td><span></span></td>
+                    <td><span></span></td>
+                    <td><span></span></td>
+                    <td><span></span></td>
+                    <td><span></span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/MyCalendar.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script>
+    var selectDateStr = getQueryString('selectDate');
+    var selectDate = '';
+    if (selectDateStr != null) {
+        selectDate = new Date(selectDateStr);
+    }
+    var now = new Date();
+    var startTime = new Date(now.getTime() - 365 * 24 * 3600 * 1000);
+    var endTime = new Date(now.getTime() + 365 * 24 * 3600 * 1000);
+    var url = 'index.html?date=';
+    var calendar = new MyCalendar(selectDate, startTime, endTime, url);
+    calendar.init();
+    $('#nextMonth').click(function () {
+        calendar.nextMonth();
+    });
+    $('#prevMonth').click(function () {
+        calendar.prevMonth();
+    });
+    $("#selectTimePage").swipe(
+            {
+                swipe: function (event, direction, distance, duration, fingerCount) {
+                    if (direction == "left") {
+                        calendar.nextMonth();
+                    } else if (direction == "right") {
+                        calendar.prevMonth();
+                    }
+
+                }
+            }
+    );
+</script>
+</body>
+</html>

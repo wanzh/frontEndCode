@@ -1,0 +1,150 @@
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    color: #3a3a3a;
+}
+
+a:visited {
+    color: #3a3a3a;
+}
+
+a:hover {
+    color: #3a3a3a;
+}
+
+.list-unstyled {
+    list-style: none;
+}
+
+.page {
+    position: relative;
+}
+
+.title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #e3cf86;
+    text-align: center;
+    white-space: nowrap;
+    background: #3A3A3A;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+/*--------------------select_time------------*/
+.btnToday {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 50px;
+    height: 24px;
+    border: 1px solid #b5a25d;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    color: #b5a25d;
+}
+
+.btnToday:visited, .btnToday:hover {
+    color: #b5a25d;
+}
+
+.calendar {
+    width: 100%;
+    text-align: center;
+}
+
+.calendarDate {
+    padding: 10px 0;
+    background-color: #B5A45C;
+}
+
+.calendarDate-year, .calendarDate-month {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.calendarDate-nextMonth, .calendarDate-prevMonth {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 68px;
+}
+
+.calendarDate-prevMonth {
+    left: 0;
+    top: 0;
+    background: url("../images/btn_left.png") no-repeat 50% 50%;
+    background-size: 17px 30px;
+}
+
+.calendarDate-nextMonth {
+    right: 0;
+    top: 0;
+    background: url("../images/btn_right.png") no-repeat 50% 50%;
+    background-size: 17px 30px;
+}
+
+.calendar thead {
+    border-bottom: 1px solid #b5a25d;
+    color: #b5a25d;
+    line-height: 50px;
+}
+
+.calendar tbody {
+    line-height: 30px;
+}
+
+.calendar tbody td {
+    padding: 5px 5px;
+}
+
+.calendar tbody a, .calendar tbody span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.calendar-current-day {
+    border-radius: 40px;
+    border: 1px solid #b5a25d;
+    color: #3a3a3a;
+    text-align: center;
+}
+
+.calendar tbody a:hover, .calendar tbody a:active, .calendar-day-active {
+    border-radius: 40px;
+    background: #ff8989;
+    border: 1px solid #ff8989;
+}
+
+.calendar-unselectable {
+    color: #999999;
+}
+
+.calendar-other-month {
+
+}
+
+
+
