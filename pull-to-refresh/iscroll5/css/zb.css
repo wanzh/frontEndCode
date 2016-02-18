@@ -1,0 +1,54 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px; /*px*/
+    line-height: 1.5;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #FFFFFF;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.content {
+    margin: auto;
+    padding: 0;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+}
+.list>li{
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 40px;
+    border-bottom: 1px solid #dddddd;
+}
+
